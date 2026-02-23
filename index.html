@@ -33,10 +33,15 @@
       <div class="progress-container">
         <div id="progressBar" class="progress-bar"></div>
       </div>
+      <!-- Progress text helps users understand exact completion status -->
+      <p id="progressText" class="progress-text">0% of attendance goal reached</p>
     </div>
     <div class="container">
       <!-- Feedback message -->
-      <p id="greeting"></p>
+      <p id="greeting" aria-live="polite"></p>
+
+      <!-- Celebration message appears when the attendance goal is reached -->
+      <div id="celebration" class="celebration-banner" aria-live="polite"></div>
 
       <!-- Check-in form -->
       <form class="check-in" id="checkInForm">
@@ -67,19 +72,28 @@
       <div class="team-stats">
         <h3>Team Attendance</h3>
         <div class="teams-grid">
-          <div class="team-card water">
+          <div class="team-card water" data-team-card="water">
             <span class="team-name">🌊 Team Water Wise</span>
             <span class="team-count" id="waterCount">0</span>
           </div>
-          <div class="team-card zero">
+          <div class="team-card zero" data-team-card="zero">
             <span class="team-name">🌿 Team Net Zero</span>
             <span class="team-count" id="zeroCount">0</span>
           </div>
-          <div class="team-card power">
+          <div class="team-card power" data-team-card="power">
             <span class="team-name">⚡ Team Renewables</span>
             <span class="team-count" id="powerCount">0</span>
           </div>
         </div>
+      </div>
+
+      <!-- Optional rubric feature: attendee list updates with each check-in -->
+      <div class="attendee-list-section">
+        <div class="attendee-list-header">
+          <h3>Checked-In Attendees</h3>
+          <span id="attendeeListCount" class="attendee-list-count">0 entries</span>
+        </div>
+        <ul id="attendeeList" class="attendee-list"></ul>
       </div>
     </div>
 

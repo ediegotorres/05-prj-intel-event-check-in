@@ -237,6 +237,12 @@ button .fas {
   transition: width 0.6s ease;
 }
 
+.progress-text {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 14px;
+}
+
 /* Adjust spacing between components */
 .container {
   margin-top: 0;
@@ -256,6 +262,17 @@ button .fas {
 .success-message {
   background-color: #e8f4fc;
   color: #003c71;
+}
+
+.celebration-banner {
+  display: none;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e7f7ee, #dbeafe);
+  color: #14532d;
+  border: 1px solid #bbf7d0;
+  font-weight: 600;
 }
 
 /* Counter */
@@ -329,6 +346,8 @@ select {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 /* Team card colors */
@@ -346,6 +365,87 @@ select {
   font-size: 15px;
   font-weight: 500;
   color: #475569;
+}
+
+.team-count {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Winner highlight used by the celebration feature */
+.team-card.winner {
+  border-color: #16a34a;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.15);
+  transform: translateY(-2px);
+}
+
+.attendee-list-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f1f5f9;
+  text-align: left;
+}
+
+.attendee-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.attendee-list-header h3 {
+  color: #64748b;
+  font-size: 16px;
+}
+
+.attendee-list-count {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.attendee-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.attendee-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.attendee-name {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.attendee-team {
+  font-size: 13px;
+  color: #475569;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.attendee-list-empty {
+  color: #64748b;
+  text-align: center;
+  padding: 16px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
 }
 
 /* Mobile responsive */
@@ -380,5 +480,15 @@ select {
 
   .teams-grid {
     grid-template-columns: 1fr;
+  }
+
+  .attendee-list-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .attendee-list li {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
